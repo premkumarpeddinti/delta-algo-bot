@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: delta-bot-webhook
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python webhook.py
+    envVars:
+      - key: API_KEY
+        value: your_api_key
+      - key: API_SECRET
+        value: your_api_secret
+      - key: BASE_URL
+        value: https://api.india.delta.exchange
+      - key: PRODUCT_SYMBOL
+        value: BTCUSD
+      - key: POSITION_SIZE
+        value: "10"
+      - key: TAKE_PROFIT
+        value: "300"
+      - key: STOP_LOSS
+        value: "100"
